@@ -1,0 +1,90 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+    border: 1px solid red;
+}
+
+body {
+    background-color: #222;  
+    overflow: hidden;     
+}
+
+p {
+    color: white;
+    font-size: 1.3em;
+}
+
+.margins {
+    padding: 10px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+/*high scores button*/
+.button{
+    outline: none;
+    background-color: black;
+    color: white;
+    font-size: 1.3em;
+}
+
+/*timer*/
+.nav-bar p {
+    float: right;
+}
+
+/*welcome screen and main*/
+.intro-screen, main {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 10vh;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*--headers--*/
+h1, h2 {
+    color: rgba(255, 255, 168);
+    text-align: center;
+}
+
+/*quiz questions*/
+.intro p {
+    text-align: center;
+}
+
+.start-button {
+    display: block;
+    margin: 0 auto;
+}
+
+main {
+    display: block; 
+}
+
+li {
+    list-style: none;
+}
+
+.question-screen {
+    display: none;
+}
+
+.finished-screen {
+    display: block;
+}
+
+.finished-screen ol{
+    overflow-y: scroll;
+    max-height: 200px;
+}

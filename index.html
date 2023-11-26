@@ -7,37 +7,65 @@
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
   </head>
   <body>
-    <header>
-      <div class= "large-font">Word Guess Game</div>
-      <button class="start-button">Start</button>
-    </header>
-
-    <main>
-      <section>
-        <div class="card word-guess">
-          <div class="large-font word-blanks">J _ v _ S c r_ _t</div>
-        </div>
-      </section>
-
-      <section>
-        <div class="card results">
-          <div class = "win-loss-container">
-          <div>
-          <h2>Wins: <span class="win">0 </span> </h2>
-          <h2>Losses: <span class="lose">0</span></h2>
-        </div>
-          <button class="reset-button">Reset Score</button>
-      </div>
-          <div class= "card timer">
-            <div class = "timer-text">
-            <div class="large-font timer-count">10</div>
-            <h3>seconds remaining</h3>
-          </div>
+    <div>
+        <div class="margins">
         
-          </div>
+        <!--nav-bar-->
+        <div class="nav-bar">
+            <button>View high scores</button>
+            <p>Timer: 00:00</p>
         </div>
-      </section>
-    </main>
+
+        <!--welcome screen-->
+        <div class="intro-screen"> 
+            <header class="intro">
+                <h1>Welcome to the Quiz</h1>
+                <p>Press Start to begin quiz!</p>
+                <div class= "large-font">Word Guess Game</div>
+                <button>Start!</button>
+              </header>
+        </div>
+        
+        <!--quiz questions-->
+        <main>
+            <section>
+              <div class="question-screen">
+                <h2>question here</h2>
+                <ul>
+                    <li><button>Answer 1</button></li>
+                    <li><button>Answer 1</button></li>
+                    <li><button>Answer 1</button></li>
+                    <li><button>Answer 1</button></li>
+                </ul>
+            </section>
+      <!--Finished Scrreen--> 
+            <section>
+                <div class="finished-screen">
+                <h2>All done!</h2>
+                <p>Your final score is: 00</p>
+                <div>
+                    <label for="">Enter initials:</label>
+                    <input type="text">
+                    <button>Submit</button>
+                </div>
+            </section>
+
+            <section class="highscores-screen">
+                <h2>Highscores:</h2>
+                <ol>
+                    <!--javascript-->
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ol>
+                <button>Go Back</button>
+                <button>Clear Highscores</button>
+            </section>
+          </main>
+    </div>
+
+    
     <script src="assets/js/script.js"></script>
   </body>
 </html>
