@@ -31,7 +31,7 @@ const timerElement = document.getElementById("time");
 
 let currentQuestion=0;
 let score=0;
-let timeLeft=75;
+let timeLeft=120;
 
 function loadQuestion(){
     const question=questions[currentQuestion];
@@ -67,10 +67,26 @@ function checkAnswer(){
     }
 }
 
-function shoScore()
+function showScore()
 {
     clearInterval(timerInterval);
     questionElement.style.display="none";
     choicesElement.style.display="none";
+    submitButton.style.display="none";
+    scoreElement.textContent='Your score: ${score}';
+    scoreElement.style.display="block";
+}
+
+function updateTimer(){
+    const minutes=Math.floor(timeLeft/60);
+    let seconds=timeLeft%60;
+    timerElement.textContent='${minutes}:${seconds}';
+
+    if(timeLeft===0){
+        showScore();
+    }
+    else{
+        timeLeft--;
+    }
 
 }
