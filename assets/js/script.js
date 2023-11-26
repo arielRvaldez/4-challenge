@@ -82,11 +82,12 @@ function updateTimer(){
     let seconds=timeLeft%60;
     timerElement.textContent='${minutes}:${seconds}';
 
-    if(timeLeft===0){
+    if (timeLeft===0){
         showScore();
     }
-    else{
+    else {
         timeLeft--;
     }
-
 }
+
+
