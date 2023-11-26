@@ -21,8 +21,8 @@ const questions=[
     }
 ];
 
-const container = document.querySelector(".container");
-const questionElement = document.getElementById("question");
+const margins = document.querySelector(".margins");
+const questionElement = document.getElementById("questions");
 const choicesElement = document.getElementById("choices");
 const submitButton = document.getElementById("submit-btn");
 const scoreElement = document.getElementById("score");
@@ -43,9 +43,34 @@ function loadQuestion(){
         const radio=document.createElement("input");
         radio.type="radio";
         radio.name="choice";
-        radio.value=i;
+        radio.value=i;s
         li.appendChild(radio);
         li.appendChild(document.createTextNode(question.choices[i]));
         choicesElement.appendChild(li);
     }
+}
+
+function checkAnswer(){
+    const selectOption=document.querySelector("input[name='choice']:checked");
+    if(selectOption){
+        const selectedAnswer=parseInt(selectOption.value);
+        if(selectedAnswer===questions[currentQuestion].correctAnswer){
+            score++;
+        }
+        currentQuestion++;
+        if(currentQuestion<questions.length){
+            loadQuestion();
+        }
+        else{
+            showScore();
+        }
+    }
+}
+
+function shoScore()
+{
+    clearInterval(timerInterval);
+    questionElement.style.display="none";
+    choicesElement.style.display="none";
+
 }

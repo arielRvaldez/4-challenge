@@ -4,16 +4,16 @@
     padding: 0;
     box-sizing: border-box;
     font-family: monospace;
-    border: 1px solid red;
+    border: 1px solid blue;
 }
 
 body {
-    background-color: #222;  
+    background-color: white;  
     overflow: hidden;     
 }
 
 p {
-    color: white;
+    color: blue;
     font-size: 1.3em;
 }
 
