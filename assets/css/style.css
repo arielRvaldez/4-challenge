@@ -73,7 +73,7 @@ h1, h2 {
 }
 
 main {
-    display: block; 
+    display: none; 
 }
 /*no bullet point*/
 li {
