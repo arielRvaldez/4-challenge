@@ -10,7 +10,7 @@ var resultsElement = document.getElementById("result");
 var gameoverDiv = document.getElementById("gameover");
 var finishedpageEl = document.getElementById("finished-page");
 var submitScoreBtn = document.getElementById("submitScore");
-var highscoresscreeen = document.getElementById("highscores-screen");
+var highscoresscreen = document.getElementById("highscores-screen");
 var highscoreDiv = document.getElementById("highscores-popup");
 var highscorePlaceName = document.getElementById("initials");
 var highscoreShowName = document.getElementById("highscore-initials");
@@ -98,4 +98,42 @@ function showScore(){
     finishedpageEl.innerHTML = "You got" + score + " out of " + Quizquestions.length + " correct!";
 }
 
+submitScoreBtn.addEventListener("click", function highscore(){
+   //if not valid initials// 
+    if(highscorePlaceName.value === "") {
+        alert("Initials cannot be blank");
+        return false;
+    }
+    else{
+        var savedHighscores = JSON.parse(localStorage.getItem("savedHighscores")) || [];
+        var currentUser = highscoreInputName.value.trim();
+        var currentHighscore = {
+            name : currentUser,
+            score : score //stores new high score//
+        };
+    //shows only high scores and "go bac"//
+        gameoverDiv.style.display = "none";
+        highscoresscreen.style.display = "flex";
+        highscoreDiv.style.display = "block";
+        Goback.style.display = "flex";
+        
+        savedHighscores.push(currentHighscore);
+        localStorage.setItem("savedHighscores", JSON.stringify(savedHighscores));
+        generateHighscores();
+    }    
+});
+//shows high scores//
+function generateHighscores(){
+    highscoreDisplayName.innerHTML = "";
+    highscoreDisplayScore.innerHTML = "";
+    var highscores = JSON.parse(localStorage.getItem("savedHighscores")) || [];
+    for (i=0; i<highscores.length; i++){
+        var newNameSpan = document.createElement("li");
+        var newScoreSpan = document.createElement("li");
+        newNameSpan.textContent = highscores[i].name;
+        newScoreSpan.textContent = highscores[i].score;
+        highscoreDisplayName.appendChild(newNameSpan);
+        highscoreDisplayScore.appendChild(newScoreSpan);
+    }
+}
 
