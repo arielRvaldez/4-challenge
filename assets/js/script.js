@@ -21,10 +21,11 @@ var questions=[
     }
 ];
 
-var margins = document.querySelector(".margins");
+var margins=document.querySelector(".margins");
 var questionElement = document.getElementById("questions");
 var choicesElement = document.getElementById("choices");
-var submitButton = document.getElementById("score");
+var submitButton = document.getElementById("submit-btn");
+var scoreElement = document.getElementById("score");
 var restartButton = document.getElementById("restart-btn");
 const timerElement = document.getElementById("timer");
 
