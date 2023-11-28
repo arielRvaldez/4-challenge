@@ -1,4 +1,4 @@
-var startbutton = document.querySelector("#generate");
+var startbutton = document.querySelector("#start-button");
 //start button//
 startbutton.addEventListener("click", startQuiz)
 
