@@ -72,13 +72,6 @@ function updateTimer(){
         timeLeft--;
     }
 }
-//when finished only score will be showed//
-function showScore(){
-    clearInterval(timerInterval);
-    questionElement.style.display="none";
-    choicesElement.style.display="none";
-    scoreElement.textContent='Your score: ${score}';
-    scoreElement.style.display="block";
-}
+
 
 

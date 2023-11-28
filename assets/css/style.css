@@ -82,7 +82,7 @@ li {
 .questions {
     display: block;
 }
-
+/*finished screen*/
 .finished-screen {
     display: block;
 }
@@ -90,4 +90,7 @@ li {
 .finished-screen ol{
     overflow-y: scroll;
     max-height: 200px;
+}
+.highscores-screen {
+    display: block;
 }
