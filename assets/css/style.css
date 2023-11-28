@@ -3,20 +3,23 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: monospace;
+    font-family: system-ui;
     border: 1px solid blue;
 }
 
 body {
-    background-color: white;  
+    background-color: white; 
+    /*prevent scroll bar*/ 
     overflow: hidden;     
 }
-
+/*start button*/
 p {
+    display: block;
     color: blue;
     font-size: 1.3em;
 }
 
+/*questions screen*/
 .margins {
     padding: 10px;
     height: 100vh;
@@ -38,8 +41,8 @@ p {
     float: right;
 }
 
-/*welcome screen and main*/
-.intro-screen, main {
+/*welcome screen*/
+.intro-screen {
     background-color: rgba(0, 0, 0, 0.5);
     height: 100%;
     width: 50%;
@@ -47,7 +50,7 @@ p {
     margin-bottom: 10vh;
     margin-left: 10px;
     margin-right: 10px;
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: center;
 }
@@ -71,13 +74,13 @@ h1, h2 {
 main {
     display: block; 
 }
-
+/*no bullet point*/
 li {
     list-style: none;
 }
 
 .questions {
-    display: none;
+    display: block;
 }
 
 .finished-screen {

@@ -24,14 +24,13 @@ const questions=[
 const margins = document.querySelector(".margins");
 const questionElement = document.getElementById("questions");
 const choicesElement = document.getElementById("choices");
-const submitButton = document.getElementById("submit-btn");
-const scoreElement = document.getElementById("score");
+const submitButton = document.getElementById("score");
 const restartButton = document.getElementById("restart-btn");
 const timerElement = document.getElementById("time");
 
 let currentQuestion=0;
 let score=0;
-let timeLeft=120;
+let timeLeft = 120; //initial timer value in seconds
 
 function loadQuestion(){
     const question=questions[currentQuestion];
@@ -50,29 +49,22 @@ function loadQuestion(){
     }
 }
 
-function checkAnswer(){
-    const selectOption=document.querySelector("input[name='choice']:checked");
-    if(selectOption){
-        const selectedAnswer=parseInt(selectOption.value);
-        if(selectedAnswer===questions[currentQuestion].correctAnswer){
-            score++;
-        }
-        currentQuestion++;
-        if(currentQuestion<questions.length){
-            loadQuestion();
-        }
-        else{
-            showScore();
-        }
+function checkAnswer(selectedAnswer, correctAnswer) {
+    if (selectedAnswer !== correctAnswer) {
+        return false; //incorrect answer
+    if (!checkAnswer(selectedAnswer, correctAnswer)) {
+        timerValue -= 10; //substracts 10 seconds for incorrect answer
+    }
+    } else {
+        return true; //correct answer
     }
 }
-
+//when finished only score will be showed//
 function showScore()
 {
     clearInterval(timerInterval);
     questionElement.style.display="none";
     choicesElement.style.display="none";
-    submitButton.style.display="none";
     scoreElement.textContent='Your score: ${score}';
     scoreElement.style.display="block";
 }
