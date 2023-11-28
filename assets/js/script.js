@@ -1,5 +1,8 @@
+var startbutton = document.querySelector("#generate");
+//start button//
+startbutton.addEventListener("click", startQuiz)
+
 var welcomeDiv = document.getElementById("intro-screen");
-var startButton = document.getElementById("start-button");
 var timer = document.getElementById("timer");
 var questions = document.getElementById("questions");
 var buttonA = document.getElementById("a");
@@ -55,9 +58,6 @@ var score = 0;
 var timeLeft = 120; //initial timer value in seconds//
 var timerInterval;
 var correct;
-
-//start button//
-startbutton.addEventListener("click",startQuiz);
 
 //removes start button, generates quiz, and begins timer
 function startQuiz(){
