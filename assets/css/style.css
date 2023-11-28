@@ -64,6 +64,7 @@ h1, h2 {
 /*quiz questions*/
 .intro p {
     text-align: center;
+    justify-content: center;
 }
 
 .start-button {
