@@ -1,67 +1,63 @@
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root{
+    background-color: whitesmoke;
     font-family: system-ui;
-    border: 1px solid blue;
+    overflow: hidden; /*prevent scroll bar*/ 
 }
-
-body {
-    background-color: white; 
-    /*prevent scroll bar*/ 
-    overflow: hidden;     
-}
-/*start button*/
+    
+/*welcome paragraph*/
 p {
-    display: block;
+    text-align: center;
     color: blue;
     font-size: 1.3em;
+    font-family: system-ui;
 }
 
-/*questions screen*/
+/*welcome screen*/
 .margins {
-    padding: 10px;
+    width: 100vw;
     height: 100vh;
+    margin: 0 auto;
     display: flex;
+    max-width: 80rem;
     flex-direction: column;
-    justify-content: start;
+    justify-content: center;
+    align-items: center;
 }
 
-/*high scores button*/
-.button{
-    outline: none;
-    background-color: black;
-    color: white;
+/*global styling for buttons*/
+button{
+    border: #bc7baf;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 3px;
+    padding: 20px;
+    width: 200px;
+    background-color: rgb(202, 135, 202);
+    color: black;
     font-size: 1.3em;
 }
 
-/*timer*/
-.nav-bar p {
-    float: right;
-    margin-inline-end: 10px;
+button:hover{
+    box-shadow: rgb(240, 113, 136);
 }
 
 /*welcome screen*/
 .intro-screen {
-    background-color: rgba(0, 0, 0, 0.5);
-    height: 100%;
-    width: 50%;
-    margin: 0 auto;
-    margin-bottom: 10vh;
-    margin-left: 10px;
-    margin-right: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 /*--headers--*/
-h1, h2 {
-    color: rgba(255, 255, 168);
+h2, h3 {
+    margin-top: -.5rem;
     text-align: center;
 }
 
+/*global input*/
+input{
+    text-align: center;
+}
 /*quiz questions*/
 .intro p {
     text-align: center;
