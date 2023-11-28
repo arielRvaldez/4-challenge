@@ -13,18 +13,16 @@
         <!--nav-bar-->
         <div class="nav-bar">
             <button>View high scores</button>
-            <div class="timer">
-                <span id="time">00:00</span> 
+            <div id="timer">Time left: </div> 
             </div>
         </div>
 
         <!--welcome screen-->
-        <div class="intro-screen"> 
-            <header class="intro">
-                <h1>Coding Quiz Challenge</h1>
-                <p>Press Start to begin quiz!</p>
-                <button>Start!</button>
-              </header>
+        <div id="intro-screen"> 
+              <h1>Coding Quiz Challenge</h1>
+                <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
+                <button id="start-button">Start!</button>
+                <button id="Highscore-button" onclick="showHighscore()">View High Scores</button>
         </div>
         
         <!--quiz questions-->
@@ -61,11 +59,11 @@
                     <li></li>
                 </ol>-->
                 <button>Go Back</button>
-                <button>Clear Highscores</button>
+                <button id="Clearhighscores-button">Clear Highscores</button>
             </section>
           </main>
     </div>
     <!--reads javascript-->
-    <script type="text/javascript" src="./assets/js/script.js"></script>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
