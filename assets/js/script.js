@@ -1,4 +1,4 @@
-const questions=[
+var questions=[
     {
         question : "A very useful tool used during development and debugging for printing content to the dedugger is:",
         choices:["Javascript", "terminal/bash", "for loops", "console.log"],
@@ -21,19 +21,19 @@ const questions=[
     }
 ];
 
-const margins = document.querySelector(".margins");
-const questionElement = document.getElementById("questions");
-const choicesElement = document.getElementById("choices");
-const submitButton = document.getElementById("score");
-const restartButton = document.getElementById("restart-btn");
-const timerElement = document.getElementById("time");
+var margins = document.querySelector(".margins");
+var questionElement = document.getElementById("questions");
+var choicesElement = document.getElementById("choices");
+var submitButton = document.getElementById("score");
+var restartButton = document.getElementById("restart-btn");
+const timerElement = document.getElementById("timer");
 
 let currentQuestion=0;
 let score=0;
-let timeLeft = 120; //initial timer value in seconds
+let timeLeft = 120; //initial timer value in seconds//
 
 function loadQuestion(){
-    const question=questions[currentQuestion];
+    var question=questions[currentQuestion];
     questionElement.textContent=question.question;
 
     choicesElement.innerHTML="";
