@@ -39,6 +39,7 @@ p {
 /*timer*/
 .nav-bar p {
     float: right;
+    margin-inline-end: 10px;
 }
 
 /*welcome screen*/
