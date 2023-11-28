@@ -1,13 +1,37 @@
-var questions=[
+var welcomeDiv = document.getElementById("margins");
+var startButton = document.getElementById("start-button");
+var timer = document.getElementById("timer");
+var questions = document.getElementById("questions");
+var buttonA = document.getElementById("a");
+var buttonB = document.getElementById("b");
+var buttonC = document.getElementById("c");
+var buttonD = document.getElementById("d");
+var resultsElement = document.getElementById("result");
+var gameoverDiv = document.getElementById("gameover");
+var finishedpageEl = document.getElementById("finished-page");
+var submitScotreBtn = document.getElementById("submitScore");
+var highscoresscreeen = document.getElementById("highscores-screen");
+var highscoreDiv = document.getElementById("highscores-popup");
+var highscorePlaceName = document.getElementById("initials");
+var highscoreShowName = document.getElementById("highscore-initials");
+var Goback = document.getElementById("go-back");
+
+var Quizquestions=[
     {
         question : "A very useful tool used during development and debugging for printing content to the dedugger is:",
-        choices:["Javascript", "terminal/bash", "for loops", "console.log"],
-        correctAnswer: 2
+        choiceA:"Javascript",
+        choiceB: "terminal/bash",
+        choiceC: "for loops",
+        choiceD: "console.log",
+        correctAnswer: "2"
     },
     {
         question : "String values must be enclosed within ____ when being assigned to variables.",
-        choices:["commas", "curly brackets", "quotes", "parenthesis"],
-        correctAnswer: 3   
+        choiceA: "commas",
+        choiceB: "curly brackets", 
+        choiceC: "quotes", 
+        choiceD: "parenthesis",
+        correctAnswer: "3"   
     },
     {
         question : "Commonly used data types DO Not include:",
@@ -16,39 +40,35 @@ var questions=[
     },
     {
         question : "Arrays in Javascript can be used to store____.",
-        choices:["numbers and strings", "other arrays", "booleans", "all of the above"],
-        correctAnswer: 4   
-    }
+        choiceA: "numbers and strings",
+        choiceB: "other arrays",
+        choiceC: "booleans",
+        choiceD: "all of the above",
+        correctAnswer: "4"   
+    },
 ];
 
-var margins=document.querySelector(".margins");
-var questionElement = document.getElementById("questions");
-var choicesElement = document.getElementById("choices");
-var submitButton = document.getElementById("submit-btn");
-var scoreElement = document.getElementById("score");
-var restartButton = document.getElementById("restart-btn");
-const timerElement = document.getElementById("timer");
+//global variables
+var finalQuestionIndex  = quizQuestions.length;
+var currentQuestionIndex = 0;
+var score = 0;
+var timeLeft = 120; //initial timer value in seconds//
+var timerInterval;
+var correct;
 
-let currentQuestion=0;
-let score=0;
-let timeLeft = 120; //initial timer value in seconds//
-
-function loadQuestion(){
-    var question=questions[currentQuestion];
-    questionElement.textContent=question.question;
-
-    choicesElement.innerHTML="";
-    for(let i=0;i<question.choices.length;i++){
-        const li=document.createElement("li");
-        const radio=document.createElement("input");
-        radio.type="radio";
-        radio.name="choice";
-        radio.value=i;s
-        li.appendChild(radio);
-        li.appendChild(document.createTextNode(question.choices[i]));
-        choicesElement.appendChild(li);
+//loads questions//
+function generateQuizQuestion(){
+    gameoverDiv.style.display = "none";
+    if (currentQuestionIndex === finalQuestionIndex){
+        return showScore();
     }
-}
+    var currentQuestion = quizQuestions[currentQuestionIndex];
+    questions.innerHTML = "<p>" + currentQuestion.question +"</p>";
+    buttonA.innerHTML = currentQuestion.choiceA;
+    buttonB.innerHTML = currentQuestion.choiceB;
+    buttonC.innerHTML = currentQuestion.choiceC;
+    buttonD.innerHTML = currentQuestion.choiceD;
+};
 
 function checkAnswer(selectedAnswer, correctAnswer) {
     if (selectedAnswer !== correctAnswer) {
