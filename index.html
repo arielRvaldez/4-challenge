@@ -8,15 +8,7 @@
   </head>
   <body>
     <div>
-        <div class="margins">
-        
-        <!--nav-bar-->
-        <div class="nav-bar">
-            <button>View high scores</button>
-            <div id="timer">Time left: </div> 
-            </div>
-        </div>
-
+        <div class="margins"> <!--whole page-->
         <!--welcome screen-->
         <div id="intro-screen"> 
               <h1>Coding Quiz Challenge</h1>
@@ -27,40 +19,29 @@
         
         <!--quiz questions-->
         <main>
-            <section>
-              <div class="questions">
-                <h2>Questions</h2>
-                <ul>
-                    <li><button>Answer 1</button></li>
-                    <li><button>Answer 1</button></li>
-                    <li><button>Answer 1</button></li>
-                    <li><button>Answer 1</button></li>
-                </ul>
-            </section>
-      <!--------Finished Screen--> 
-            <section>
-                <div class="finished-screen">
-                <h2>All done!</h2>
-                <p>Your final score is: 00</p>
-                <div>
-                    <label for="">Enter initials:</label>
-                    <input type="text">
-                    <button>Submit</button>
+            <div id="questions">
+              <div id="timer">Time left: </div> <!--timer-->
+                <button id="a" onclick="checkAnswer('a')">A</button>
+                <button id="b" onclick="checkAnswer('b')">B</button>
+                <button id="c" onclick="checkAnswer('c')">C</button>
+                <button id="d" onclick="checkAnswer('d')">B</button>
+              <div id="result"></div> 
+         <!--------Finished Screen-->  
+            <div id="gameover">
+                <div id="finished-screen"></div>
+                    <input type="text"> size ="40" placeholder="Enter initials"
+                    <button id="submitScore">Submit</button>
                 </div>
-            </section>
-
-            <section class="highscores-screen">
-                <h2>Highscores:</h2>
-                <ol>
-                    <!--generated in javascript
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ol>-->
-                <button>Go Back</button>
-                <button id="Clearhighscores-button">Clear Highscores</button>
-            </section>
+            <div id="highscores-screen">
+                <h3>User Initials</h3>
+                <h3>Score</h3>
+                </div>
+            <div id = "highscore-initials"></div>
+            <div id = "highscore-score"></div>
+            </div>
+          <!--Restart buttons-->
+                <button id="Go Back" onclick="replayQuiz()">Go Back</button>
+                <button id="Clearhighscores-button" onclick=""Clearhighscores-button>Clear Highscores</button>
           </main>
     </div>
     <!--reads javascript-->
