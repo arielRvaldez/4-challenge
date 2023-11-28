@@ -9,7 +9,7 @@ var buttonD = document.getElementById("d");
 var resultsElement = document.getElementById("result");
 var gameoverDiv = document.getElementById("gameover");
 var finishedpageEl = document.getElementById("finished-page");
-var submitScotreBtn = document.getElementById("submitScore");
+var submitScoreBtn = document.getElementById("submitScore");
 var highscoresscreeen = document.getElementById("highscores-screen");
 var highscoreDiv = document.getElementById("highscores-popup");
 var highscorePlaceName = document.getElementById("initials");
@@ -70,36 +70,32 @@ function generateQuizQuestion(){
     buttonD.innerHTML = currentQuestion.choiceD;
 };
 
-function checkAnswer(selectedAnswer, correctAnswer) {
-    if (selectedAnswer !== correctAnswer) {
-        return false; //incorrect answer
-    if (!checkAnswer(selectedAnswer, correctAnswer)) {
-        timerValue -= 10; //substracts 10 seconds for incorrect answer
-    }
-    } else {
-        return true; //correct answer
-    }
-}
+//removes start button, generates quiz, and begins timer
+function startQuiz(){
+    gameoverDiv.style.display = "none";
+    welcomeDiv.style.display = "none";
+    generateQuizQuestion();
 
-function updateTimer(){
-    const minutes=Math.floor(timeLeft/60);
-    let seconds=timeLeft%60;
-    timerElement.textContent='${minutes}:${seconds}';
-
-    if (timeLeft===0){
-        showScore();
-    }
-    else {
+    //Timer
+    timerInterval = setInterval(function() {
         timeLeft--;
-    }
+        timer.textContent = "Time left: " + timeLeft;
+    
+        if(timeLeft === 0) {
+          clearInterval(timerInterval);
+          showScore();
+        }
+      }, 1000);
+    questions.style.display = "block";
 }
-//when finished only show score//
+
+//when finished will only show score//
 function showScore(){
+    questions.style.display="none";
+    goameoverDiv.style.display="flex";
     clearInterval(timerInterval);
-    questionElement.style.display="none";
-    choicesElement.style.display="none";
-    scoreElement.textContent='Your score: ${score}';
-    scoreElement.style.display="block";
+    highscorePlaceName.value = "";
+    finishedpageEl.innerHTML = "You got" + score + " out of " + Quizquestions.length + " correct!";
 }
 
 
