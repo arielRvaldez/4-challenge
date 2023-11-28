@@ -92,6 +92,25 @@ function generateQuizQuestion(){
     buttonD.innerHTML = currentQuestion.choiceD;
 };
 
+// checks answers and pop-up box if correct or not//
+function checkAnswer(answer){
+    correct = quizQuestions[currentQuestionIndex].correctAnswer;
+
+    if (answer === correct && currentQuestionIndex !== finalQuestionIndex){
+        score++;
+        alert("Correct!");
+        currentQuestionIndex++;
+        generateQuizQuestion();
+        }
+    else if (answer !== correct && currentQuestionIndex !== finalQuestionIndex){
+        alert("Incorrect.")
+        currentQuestionIndex++;
+        generateQuizQuestion();
+        }
+    else{
+        showScore();
+    }
+}
 
 //when finished will only show score//
 function showScore(){
@@ -142,6 +161,7 @@ function showHighscore(){
     Goback.style.display = "flex";
     generateHighscores();
 }
+
 //will go back to welcome screen again//
 function restartQuiz(){
     welcomeDiv.style.display = "flex";
